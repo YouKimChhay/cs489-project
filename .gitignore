@@ -1,1 +1,5 @@
 .idea
+.env
+.mvn
+mvnw
+mvnw.cmd
