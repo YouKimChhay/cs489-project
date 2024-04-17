@@ -1,0 +1,33 @@
+### add a new category by user 1
+POST http://localhost:8080/api/v1/users/1/categories
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+Content-Type: application/json
+
+{
+  "name": "Rent",
+  "description": "rent",
+  "budget": 1200
+}
+
+### get all categories by user 1
+GET http://localhost:8080/api/v1/users/1/categories
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+
+### get category 1 by user 1
+GET http://localhost:8080/api/v1/users/1/categories/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+
+### update category 1 by user 1
+PUT http://localhost:8080/api/v1/users/1/categories/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+Content-Type: application/json
+
+{
+  "name": "Rent",
+  "description": "my monthly rent",
+  "budget": 1500
+}
+
+### delete category 1 by user 1
+DELETE http://localhost:8080/api/v1/users/1/categories/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ

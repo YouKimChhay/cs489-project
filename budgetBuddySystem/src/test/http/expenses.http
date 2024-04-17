@@ -1,0 +1,45 @@
+### create a new expense by user 1
+POST http://localhost:8080/api/v1/users/1/expenses
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+Content-Type: application/json
+
+{
+  "name": "rent jan",
+  "description": "rent for jan 2024",
+  "amount": 1100,
+  "paymentDate": "2024-01-01",
+  "category": {
+    "name": "Rent"
+  }
+}
+
+### get all expenses by user 1
+GET http://localhost:8080/api/v1/users/1/expenses
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+
+### get all expenses with category 'Rent' by user 1
+GET http://localhost:8080/api/v1/users/1/expenses?category=Rent
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+
+### get expense 1 by user 1
+GET http://localhost:8080/api/v1/users/1/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+
+### update expense 1 by user 1
+PUT http://localhost:8080/api/v1/users/1/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
+Content-Type: application/json
+
+{
+  "name": "rent jan",
+  "description": "rent for jan 2024",
+  "amount": 1200,
+  "paymentDate": "2024-01-01",
+  "category": {
+    "name": "Monthly Rent"
+  }
+}
+
+### delete expense 1 by user 1
+DELETE http://localhost:8080/api/v1/users/1/expenses/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk5NDgsImV4cCI6MTcxMzMzMzU0OH0.CEXmDqjykN-0cp8tFZPpvODWsosBxdFUrp7rBrsnmFWom5DBYRJ2GPZjKeeboRDTrIngSyCuaMFyPAba7YAIkQ
