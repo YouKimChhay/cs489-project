@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Data
@@ -37,22 +37,8 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String username;
 
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Income> incomes;
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<SavingGoal> savingGoals;
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Expense> expenses;
-
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Bill> bills;
+    @Column(nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
 
     @Override

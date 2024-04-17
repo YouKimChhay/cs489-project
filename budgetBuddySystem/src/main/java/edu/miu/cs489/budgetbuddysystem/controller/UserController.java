@@ -32,6 +32,7 @@ public class UserController {
                 .username(newUser.getUsername())
                 .email(newUser.getEmail())
                 .accessToken(token)
+                .createdAt(newUser.getCreatedAt())
                 .build();
     }
 
@@ -45,6 +46,7 @@ public class UserController {
                 .username(user.getUsername())
                 .email(user.getEmail())
                 .accessToken(token)
+                .createdAt(user.getCreatedAt())
                 .build();
     }
 }

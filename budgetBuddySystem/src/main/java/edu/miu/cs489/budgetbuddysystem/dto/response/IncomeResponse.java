@@ -7,10 +7,11 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-public class AuthResponse {
-    private Long id;
-    private String username;
-    private String email;
-    private String accessToken;
+public class IncomeResponse {
+    private Long incomeId;
+    private Long userId;
+    private String source;
+    private double amount;
+    private boolean isActive;
     private LocalDateTime createdAt;
 }
