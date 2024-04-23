@@ -31,8 +31,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     @Override
     public List<Expense> getAllExpenses(Long userId, String categoryName) {
         if (categoryName != null && !categoryName.isEmpty())
-            return expenseRepository.findExpensesByUserIdAndCategoryNameOrderByCreatedAtDesc(userId, categoryName);
-        return expenseRepository.findExpensesByUserIdOrderByCreatedAtDesc(userId);
+            return expenseRepository.findExpensesByUserIdAndCategoryNameOrderByPaymentDateDesc(userId, categoryName);
+        return expenseRepository.findExpensesByUserIdOrderByPaymentDateDesc(userId);
     }
 
     @Override

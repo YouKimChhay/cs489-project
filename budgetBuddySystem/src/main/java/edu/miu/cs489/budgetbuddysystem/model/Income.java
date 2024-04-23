@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -31,8 +32,9 @@ public class Income {
     @PositiveOrZero
     private double amount;
 
+    @NotNull
     @Column(nullable = false)
-    private boolean isActive = true;
+    private LocalDate payDate;
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

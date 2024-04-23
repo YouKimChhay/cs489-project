@@ -13,7 +13,7 @@ public class IncomeMapper {
                 .userId(income.getUser().getId())
                 .amount(income.getAmount())
                 .source(income.getSource())
-                .isActive(income.isActive())
+                .payDate(income.getPayDate())
                 .createdAt(income.getCreatedAt())
                 .build();
     }

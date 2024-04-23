@@ -3,6 +3,7 @@ package edu.miu.cs489.budgetbuddysystem.dto.response;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -12,6 +13,6 @@ public class IncomeResponse {
     private Long userId;
     private String source;
     private double amount;
-    private boolean isActive;
+    private LocalDate payDate;
     private LocalDateTime createdAt;
 }

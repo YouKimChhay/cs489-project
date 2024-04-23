@@ -40,7 +40,7 @@ public class IncomeServiceImpl implements IncomeService {
         Income income = getIncomeById(userId, incomeId);
         income.setSource(updatedIncome.getSource());
         income.setAmount(updatedIncome.getAmount());
-        income.setActive(updatedIncome.isActive());
+        income.setPayDate(updatedIncome.getPayDate());
         return incomeRepository.save(income);
     }
 

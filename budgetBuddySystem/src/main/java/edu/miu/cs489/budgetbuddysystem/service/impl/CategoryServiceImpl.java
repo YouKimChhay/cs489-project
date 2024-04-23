@@ -1,5 +1,6 @@
 package edu.miu.cs489.budgetbuddysystem.service.impl;
 
+import edu.miu.cs489.budgetbuddysystem.exception.BadRequestException;
 import edu.miu.cs489.budgetbuddysystem.model.Category;
 import edu.miu.cs489.budgetbuddysystem.model.User;
 import edu.miu.cs489.budgetbuddysystem.repository.CategoryRepository;
@@ -21,13 +22,15 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category addNewCategory(Long userId, Category category) {
         User user = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("User not found."));
+        if (categoryRepository.findCategoryByNameIgnoreCaseAndUserId(category.getName(), userId).isPresent())
+            throw new BadRequestException("Category " + category.getName() + " already exist.");
         category.setUser(user);
         return categoryRepository.save(category);
     }
 
     @Override
     public List<Category> getAllCategories(Long userId) {
-        return categoryRepository.findCategoriesByUserIdOrderByName(userId);
+        return categoryRepository.findCategoriesByUserId(userId);
     }
 
     @Override
