@@ -27,7 +27,7 @@ public class IncomeServiceImpl implements IncomeService {
 
     @Override
     public List<Income> getAllIncomes(Long userId) {
-        return incomeRepository.findIncomesByUserIdOrderByCreatedAtDesc(userId);
+        return incomeRepository.findIncomesByUserIdOrderByPayDateDesc(userId);
     }
 
     @Override

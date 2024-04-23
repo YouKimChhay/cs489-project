@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface IncomeRepository extends JpaRepository<Income, Long> {
     List<Income> findIncomesByUserIdAndPayDateBetween(Long userId, LocalDate start, LocalDate end);
-    List<Income> findIncomesByUserIdOrderByCreatedAtDesc(Long userId);
+    List<Income> findIncomesByUserIdOrderByPayDateDesc(Long userId);
     Optional<Income> findIncomeByIdAndUserId(Long incomeId, Long userId);
 }

@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<Category> getAllCategories(Long userId) {
-        return categoryRepository.findCategoriesByUserId(userId);
+        return categoryRepository.findCategoriesByUserIdOrderByBudgetDesc(userId);
     }
 
     @Override
