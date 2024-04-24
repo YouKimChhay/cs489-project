@@ -32,3 +32,7 @@ export const CATEGORIES_URL = (userId) => {
 export const CATEGORY_URL = (userId, categoryId) => {
     return API_HEAD + `/${userId}/categories/${categoryId}`;
 }
+
+export const SUMMARY_URL = (userId, year, month) => {
+    return API_HEAD + `/${userId}/summary?year=${year}&month=${month}`;
+}

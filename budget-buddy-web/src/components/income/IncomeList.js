@@ -22,7 +22,7 @@ export default function IncomeList() {
             <Button href={'/addIncome'}>New Income</Button>
             <hr/>
             <h2>Incomes</h2>
-            <Table striped bordered hover>
+            <Table responsive striped bordered hover>
                 <thead>
                 <tr>
                     <th>Source</th>

@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import Utils from "../../utils/Utils";
 
 export default function Category({categoryId, name, description, budget}) {
 
@@ -8,7 +9,7 @@ export default function Category({categoryId, name, description, budget}) {
         <tr onClick={() => navigate(`/categories/${categoryId}`)}>
             <td>{name}</td>
             <td>{description}</td>
-            <td>{budget}</td>
+            <td>{Utils.format_money(budget)}</td>
         </tr>
     );
 }

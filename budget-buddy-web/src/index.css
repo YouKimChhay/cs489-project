@@ -11,3 +11,24 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+    position: relative;
+    min-height: 100vh;
+}
+
+@media screen and (min-width: 1080px) and (max-width: 2000px) {
+    #root {
+        width: 65vw;
+        margin: auto;
+        border: 1px solid gainsboro;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #root {
+        width: 50vw;
+        margin: auto;
+        border: 1px solid gainsboro;
+    }
+}

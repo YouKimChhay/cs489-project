@@ -22,7 +22,7 @@ export default function CategoryList() {
             <Button href={'/addCategory'}>New Category</Button>
             <hr/>
             <h2>Categories</h2>
-            <Table striped bordered hover>
+            <Table responsive striped bordered hover>
                 <thead>
                 <tr>
                     <th>Name</th>
