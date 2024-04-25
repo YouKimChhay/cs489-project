@@ -13,7 +13,8 @@ public class ControllerAdvice {
     @Before("(execution(* edu.miu.cs489.budgetbuddysystem.controller.IncomeController.*(..)) && args(userId,..)) ||" +
             "(execution(* edu.miu.cs489.budgetbuddysystem.controller.CategoryController.*(..)) && args(userId,..)) ||" +
             "(execution(* edu.miu.cs489.budgetbuddysystem.controller.ExpenseController.*(..)) && args(userId,..)) ||" +
-            "(execution(* edu.miu.cs489.budgetbuddysystem.controller.SummaryController.*(..)) && args(userId,..))")
+            "(execution(* edu.miu.cs489.budgetbuddysystem.controller.SummaryController.*(..)) && args(userId,..)) ||" +
+            "(execution(* edu.miu.cs489.budgetbuddysystem.controller.BillController.*(..)) && args(userId,..))")
     public void validateUserForCategoryController(JoinPoint joinPoint, Long userId) {
         UserContextUtil.validateUser(userId);
     }

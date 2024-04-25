@@ -26,24 +26,27 @@ public class Bill {
     @Column(nullable = false)
     private String name;
 
-    private String description;
+//    private String description;
 
     @NotNull
     @PositiveOrZero
     @Column(nullable = false)
     private double amount;
 
-    @NotNull
-    @Column(nullable = false)
-    private LocalDate nextDueDate;
+//    @NotNull
+//    @Column(nullable = false)
+//    private LocalDate nextDueDate;
 
-    private Recurring recurring = Recurring.MONTHLY;
+//    private Recurring recurring = Recurring.MONTHLY;
 
     @ManyToOne
     private Category category;
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     @ManyToOne
     @JoinColumn(name = "user_id")
