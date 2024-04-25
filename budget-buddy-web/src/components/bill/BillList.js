@@ -22,7 +22,9 @@ export default function BillList() {
             <Button href={'/addBill'}>New Bill</Button>
             <hr/>
             <h2>Bills</h2>
-            <p>Click on the row to update or delete.</p>
+            <p>Click on the row to <span className={'text-decoration-underline'}>pay the bill</span> or <span
+                className={'text-decoration-underline'}>update</span> or <span
+                className={'text-decoration-underline'}>delete</span>.</p>
             <Table responsive striped bordered hover>
                 <thead>
                 <tr>
@@ -30,7 +32,6 @@ export default function BillList() {
                     <th>Bill Name</th>
                     <th>Amount</th>
                     <th>Updated Date</th>
-                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>

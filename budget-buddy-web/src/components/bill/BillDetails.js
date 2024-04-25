@@ -6,6 +6,7 @@ import {Col, Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Main from "../home/Main";
 import BillService from "../../services/BillService";
+import ConfirmModal from "../modal/ConfirmModal";
 
 export default function BillDetails() {
 
@@ -18,6 +19,8 @@ export default function BillDetails() {
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
 
+    const [payModalShow, setPayModalShow] = useState(false);
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
@@ -61,12 +64,24 @@ export default function BillDetails() {
             .catch(() => setError("Unable to delete the bill. Please try again later."));
     }
 
+    const payBill = async event => {
+        event.preventDefault();
+        BillService.payBill(user.userId, user.accessToken, billId)
+            .then(() => navigate('/expenses'))
+            .catch(error => console.log(error));
+    }
+
+
     const updateBillFormDiv = (
         <div style={{padding: 30}}>
             {
                 error && <p style={{color: 'red'}}>{error}</p>
             }
-            <h1>Bill Details</h1>
+            <h1>
+                Bill Details
+                <Button style={{marginLeft: '1em'}} variant={'warning'}
+                        onClick={() => setPayModalShow(true)}>Pay Bill</Button>
+            </h1>
             <Form onSubmit={updateBill}>
                 <Form.Group as={Col} md="4">
                     <Form.Label>Choose a category below or create a new one</Form.Label>
@@ -112,8 +127,22 @@ export default function BillDetails() {
                 <Button variant={'secondary'} onClick={() => navigate('/bills')}
                         style={{marginRight: 10}}>Cancel</Button>
                 <Button style={{marginRight: 10}} type='submit'>Update</Button>
-                <Button variant={'danger'} onClick={deleteBill}>Delete</Button>
+                <Button variant={'danger'} onClick={() => setDeleteModalShow(true)}>Delete</Button>
             </Form>
+            <ConfirmModal show={deleteModalShow}
+                          onHide={() => setDeleteModalShow(false)}
+                          question={`Confirm Delete?`}
+                          actionColor={'danger'}
+                          action={'Delete'}
+                          onAction={deleteBill}
+            />
+            <ConfirmModal show={payModalShow}
+                          onHide={() => setPayModalShow(false)}
+                          question={`Confirm Pay?`}
+                          actionColor={'warning'}
+                          action={'Paid'}
+                          onAction={payBill}
+            />
         </div>
     );
 

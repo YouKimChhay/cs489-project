@@ -9,6 +9,7 @@ import {useSelector} from "react-redux";
 import Main from "../home/Main";
 import CategoryService from "../../services/CategoryService";
 import ExpenseService from "../../services/ExpenseService";
+import ConfirmModal from "../modal/ConfirmModal";
 
 
 export default function ExpenseDetails() {
@@ -23,6 +24,7 @@ export default function ExpenseDetails() {
     const [selectedCategory, setSelectedCategory] = useState("");
     const [categories, setCategories] = useState([]);
 
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
@@ -144,8 +146,15 @@ export default function ExpenseDetails() {
                 <Button variant={"secondary"} style={{marginRight: 10}}
                         onClick={() => navigate('/expenses')}>Cancel</Button>
                 <Button style={{marginRight: 10}} type='submit'>Update</Button>
-                <Button variant="danger" onClick={deleteExpense}>Delete</Button>
+                <Button variant="danger" onClick={() => setDeleteModalShow(true)}>Delete</Button>
             </Form>
+            <ConfirmModal show={deleteModalShow}
+                          onHide={() => setDeleteModalShow(false)}
+                          question={`Confirm Delete?`}
+                          actionColor={'danger'}
+                          action={'Delete'}
+                          onAction={deleteExpense}
+            />
         </div>
     );
 

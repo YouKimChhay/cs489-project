@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import Main from "../home/Main";
 import CategoryService from "../../services/CategoryService";
+import ConfirmModal from "../modal/ConfirmModal";
 
 export default function CategoryDetails() {
 
@@ -15,6 +16,8 @@ export default function CategoryDetails() {
     const user = useSelector((state) => state.auth);
 
     const [category, setCategory] = useState({});
+
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
@@ -40,7 +43,14 @@ export default function CategoryDetails() {
 
     const deleteCategory = async () => {
         CategoryService.deleteCategoryById(user.userId, user.accessToken, categoryId)
-            .then(() => navigate('/categories'))
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.statusCode === 500) {
+                    setError("Unable to delete the category.")
+                    setDeleteModalShow(false);
+                } else
+                    navigate('/categories')
+            })
             .catch(() => setError("Unable to delete the category. Please try again later."));
     };
 
@@ -91,9 +101,16 @@ export default function CategoryDetails() {
                     <Button variant={"secondary"} style={{marginRight: 10}}
                             onClick={() => navigate('/categories')}>Cancel</Button>
                     <Button style={{marginRight: 10}} type='submit'>Update</Button>
-                    <Button variant="danger" onClick={deleteCategory}>Delete</Button>
+                    <Button variant="danger" onClick={() => setDeleteModalShow(true)}>Delete</Button>
                 </Form>
             )}
+            <ConfirmModal show={deleteModalShow}
+                          onHide={() => setDeleteModalShow(false)}
+                          question={`Confirm Delete?`}
+                          actionColor={'danger'}
+                          action={'Delete'}
+                          onAction={deleteCategory}
+            />
         </div>
     );
 

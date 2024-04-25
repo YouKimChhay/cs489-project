@@ -9,6 +9,7 @@ import Main from "../home/Main";
 import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DemoContainer} from "@mui/x-date-pickers/internals/demo";
+import ConfirmModal from "../modal/ConfirmModal";
 
 export default function IncomeDetails() {
 
@@ -20,6 +21,7 @@ export default function IncomeDetails() {
     const [income, setIncome] = useState({});
     const [payDate, setPayDate] = useState("");
 
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
@@ -101,9 +103,16 @@ export default function IncomeDetails() {
                     <Button variant={"secondary"} style={{marginRight: 10}}
                             onClick={() => navigate('/incomes')}>Cancel</Button>
                     <Button style={{marginRight: 10}} type='submit'>Update</Button>
-                    <Button variant="danger" onClick={deleteIncome}>Delete</Button>
+                    <Button variant="danger" onClick={() => setDeleteModalShow(true)}>Delete</Button>
                 </Form>
             )}
+            <ConfirmModal show={deleteModalShow}
+                          onHide={() => setDeleteModalShow(false)}
+                          question={`Confirm Delete?`}
+                          actionColor={'danger'}
+                          action={'Delete'}
+                          onAction={deleteIncome}
+            />
         </div>
     );
 
