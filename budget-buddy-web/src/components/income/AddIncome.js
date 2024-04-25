@@ -40,8 +40,8 @@ export default function AddIncome() {
         newIncome.payDate = payDate;
 
         IncomeService.addNewIncome(user.userId, user.accessToken, newIncome)
-            .then(response => navigate('/incomes'))
-            .catch(error => setError("Unable to add a new income! Please try again."));
+            .then(() => navigate('/incomes'))
+            .catch(() => setError("Unable to add a new income! Please try again."));
     }
 
     const addIncomeFormDiv = (

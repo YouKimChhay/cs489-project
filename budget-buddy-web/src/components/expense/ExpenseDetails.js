@@ -33,12 +33,12 @@ export default function ExpenseDetails() {
                 setPaymentDate(currentExpense.paymentDate);
                 setSelectedCategory(currentExpense.categoryName);
             })
-            .catch(error => navigate('/addExpense'));
+            .catch(() => navigate('/addExpense'));
         CategoryService.getAllCategories(user.userId, user.accessToken)
             .then(response => {
                 setCategories([selectedCategory, ...response.data.data]);
             })
-            .catch(error => setError("Unable to load category data! Please add a new category."));
+            .catch(() => setError("Unable to load category data! Please add a new category."));
     }, []);
 
     const handleChange = event => {
@@ -63,15 +63,15 @@ export default function ExpenseDetails() {
         }
 
         ExpenseService.updateExpenseById(user.userId, user.accessToken, expenseId, expense)
-            .then(response => navigate('/expenses'))
-            .catch(error => setError("Unable to update the expense. Please try again later."));
+            .then(() => navigate('/expenses'))
+            .catch(() => setError("Unable to update the expense. Please try again later."));
     }
 
     const deleteExpense = event => {
         event.preventDefault();
         ExpenseService.deleteExpenseById(user.userId, user.accessToken, expenseId)
-            .then(response => navigate('/expenses'))
-            .catch(error => setError("Unable to delete the expense. Please try again later."));
+            .then(() => navigate('/expenses'))
+            .catch(() => setError("Unable to delete the expense. Please try again later."));
     }
 
     const addExpenseFormDiv = (

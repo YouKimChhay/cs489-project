@@ -29,7 +29,7 @@ export default function AddExpense() {
                 setCategories(response.data.data)
                 setSelectedCategory(response.data.data[0].name);
             })
-            .catch(error => setError("Unable to load category data! Please add a new category."));
+            .catch(() => setError("Unable to load category data! Please add a new category."));
     }, []);
 
     const handleChange = event => {
@@ -54,8 +54,8 @@ export default function AddExpense() {
         }
 
         ExpenseService.addNewExpense(user.userId, user.accessToken, newExpense)
-            .then(response => navigate('/expenses'))
-            .catch(error => setError("Unable to add the new expense! Please try again."));
+            .then(() => navigate('/expenses'))
+            .catch(() => setError("Unable to add the new expense! Please try again."));
     }
 
     const addExpenseFormDiv = (

@@ -15,6 +15,10 @@ import AddCategory from "./components/category/AddCategory";
 import ExpenseDetails from "./components/expense/ExpenseDetails";
 import CategoryList from "./components/category/CategoryList";
 import CategoryDetails from "./components/category/CategoryDetails";
+import SavingGoalList from "./components/savinggoal/SavingGoalList";
+import BillList from "./components/bill/BillList";
+import AddBill from "./components/bill/AddBill";
+import BillDetails from "./components/bill/BillDetails";
 
 function App() {
 
@@ -42,6 +46,12 @@ function App() {
                         <Route path='/expenses' element={<ExpenseList/>}/>
                         <Route path='/expenses/:expenseId' element={<ExpenseDetails/>}/>
                         <Route path='/addExpense' element={<AddExpense/>}/>
+
+                        <Route path='/bills' element={<BillList/>}/>
+                        <Route path='/bills/:billId' element={<BillDetails/>}/>
+                        <Route path='/addBill' element={<AddBill/>}/>
+
+                        <Route path='/savinggoals' element={<SavingGoalList/>}/>
 
                         <Route path='*' element={<Main/>}/>
                     </Routes>

@@ -22,6 +22,8 @@ export default function CategoryList() {
             <Button href={'/addCategory'}>New Category</Button>
             <hr/>
             <h2>Categories</h2>
+            <p>Click on the row to <span className={'text-decoration-underline'}>update</span> or <span
+                className={'text-decoration-underline'}>delete</span>.</p>
             <Table responsive striped bordered hover>
                 <thead>
                 <tr>

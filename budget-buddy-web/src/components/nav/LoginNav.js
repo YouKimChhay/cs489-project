@@ -15,7 +15,7 @@ export default function LoginNav() {
                             <Nav.Link href="/categories">Categories</Nav.Link>
                             <Nav.Link href="/expenses">Expenses</Nav.Link>
                             <Nav.Link href="/bills">Bills</Nav.Link>
-                            <Nav.Link href="/savings">Saving Goals</Nav.Link>
+                            <Nav.Link href="/savinggoals">Saving Goals</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">

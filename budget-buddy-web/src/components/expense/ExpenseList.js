@@ -53,6 +53,8 @@ export default function ExpenseList() {
             </div>
             <hr/>
             <h2>Expenses</h2>
+            <p>Click on the row to <span className={'text-decoration-underline'}>update</span> or <span
+                className={'text-decoration-underline'}>delete</span>.</p>
             <Table responsive striped bordered hover>
                 <thead>
                 <tr>

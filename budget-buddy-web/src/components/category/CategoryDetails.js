@@ -20,7 +20,7 @@ export default function CategoryDetails() {
     useEffect(() => {
         CategoryService.getCategoryById(user.userId, user.accessToken, categoryId)
             .then(response => setCategory(response.data.data))
-            .catch(error => navigate('/addCategory'));
+            .catch(() => navigate('/addCategory'));
     }, []);
 
     const handleChange = (event) => {
@@ -34,14 +34,14 @@ export default function CategoryDetails() {
         event.preventDefault();
 
         CategoryService.updateCategoryById(user.userId, user.accessToken, categoryId, category)
-            .then(response => navigate('/categories'))
-            .catch(error => setError("Unable to update the category. Please try again later."));
+            .then(() => navigate('/categories'))
+            .catch(() => setError("Unable to update the category. Please try again later."));
     };
 
     const deleteCategory = async () => {
         CategoryService.deleteCategoryById(user.userId, user.accessToken, categoryId)
-            .then(response => navigate('/categories'))
-            .catch(error => setError("Unable to delete the category. Please try again later."));
+            .then(() => navigate('/categories'))
+            .catch(() => setError("Unable to delete the category. Please try again later."));
     };
 
     const updateCategoryFormDiv = (

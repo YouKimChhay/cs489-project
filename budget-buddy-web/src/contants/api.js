@@ -36,3 +36,11 @@ export const CATEGORY_URL = (userId, categoryId) => {
 export const SUMMARY_URL = (userId, year, month) => {
     return API_HEAD + `/${userId}/summary?year=${year}&month=${month}`;
 }
+
+export const BILLS_URL = (userId) => {
+    return API_HEAD + `/${userId}/bills`;
+}
+
+export const BILL_URL = (userId, billId) => {
+    return API_HEAD + `/${userId}/bills/${billId}`;
+}

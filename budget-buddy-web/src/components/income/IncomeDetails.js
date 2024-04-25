@@ -25,7 +25,7 @@ export default function IncomeDetails() {
     useEffect(() => {
         IncomeService.getIncomeById(user.userId, user.accessToken, incomeId)
             .then(response => setIncome(response.data.data))
-            .catch(error => navigate('/addIncome'))
+            .catch(() => navigate('/addIncome'))
     }, []);
 
     const handleChange = (event) => {
@@ -47,14 +47,14 @@ export default function IncomeDetails() {
         income.payDate = payDate;
 
         IncomeService.updateIncomeById(user.userId, user.accessToken, incomeId, income)
-            .then(response => navigate('/incomes'))
-            .catch(error => setError("Unable to update the income. Please try again later."));
+            .then(() => navigate('/incomes'))
+            .catch(() => setError("Unable to update the income. Please try again later."));
     };
 
     const deleteIncome = async () => {
         IncomeService.deleteIncomeById(user.userId, user.accessToken, incomeId)
-            .then(response => navigate('/incomes'))
-            .catch(error => setError("Unable to delete the income. Please try again later."));
+            .then(() => navigate('/incomes'))
+            .catch(() => setError("Unable to delete the income. Please try again later."));
     };
 
     const updateIncomeFormDiv = (

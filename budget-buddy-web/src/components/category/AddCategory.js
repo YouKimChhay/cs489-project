@@ -26,8 +26,8 @@ export default function AddCategory() {
     const handleSubmit = event => {
         event.preventDefault();
         CategoryService.addNewCategory(user.userId, user.accessToken, newCategory)
-            .then(response => navigate(-1))
-            .catch(error => setError("Unable to add a new category! Please try again."));
+            .then(() => navigate(-1))
+            .catch(() => setError("Unable to add a new category! Please try again."));
     }
 
     const addCategoryFormDiv = (
