@@ -24,7 +24,7 @@ import java.util.Arrays;
 
 @Configuration
 @RequiredArgsConstructor
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
 

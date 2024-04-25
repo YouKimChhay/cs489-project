@@ -1,0 +1,3 @@
+### get summary for user 1
+GET http://localhost:8080/api/v1/users/1/summary?year=2024&month=4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw

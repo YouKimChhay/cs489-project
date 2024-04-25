@@ -3,8 +3,8 @@ POST http://localhost:8080/api/v1/users
 Content-Type: application/json
 
 {
-  "username": "saski",
-  "email": "saski@gmail.com",
+  "username": "Jane",
+  "email": "jane@gmail.com",
   "password": "12345"
 }
 
@@ -13,8 +13,8 @@ POST http://localhost:8080/api/v1/users
 Content-Type: application/json
 
 {
-  "username": "john",
-  "email": "johndoe@gmail.com",
+  "username": "John",
+  "email": "john@gmail.com",
   "password": "12345"
 }
 
@@ -23,7 +23,7 @@ POST http://localhost:8080/api/v1/users/login
 Content-Type: application/json
 
 {
-  "email": "saski@gmail.com",
+  "email": "jane@gmail.com",
   "password": "12345"
 }
 
@@ -32,6 +32,6 @@ POST http://localhost:8080/api/v1/users/login
 Content-Type: application/json
 
 {
-  "email": "something@gmail.com",
-  "password": "12345"
+  "email": "john@gmail.com",
+  "password": "54321"
 }

@@ -1,32 +1,33 @@
 ### get all incomes by user 1
 GET http://localhost:8080/api/v1/users/1/incomes
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk0MjcsImV4cCI6MTcxMzMzMzAyN30.94A6dArFLbbrYqS81WUGaXLvNHOh-_JGfy0hJzdRbM0SgA3k358om8E-ud4AOfOBIN-R8wcmPDNTEX6huYgXTw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw
 
 ### add a new income by user 1
 POST http://localhost:8080/api/v1/users/1/incomes
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk0MjcsImV4cCI6MTcxMzMzMzAyN30.94A6dArFLbbrYqS81WUGaXLvNHOh-_JGfy0hJzdRbM0SgA3k358om8E-ud4AOfOBIN-R8wcmPDNTEX6huYgXTw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw
 Content-Type: application/json
 
 {
-  "source": "full-time work",
-  "amount": 3000
+  "source": "Full-time Work",
+  "amount": 8000,
+  "payDate": "2024-04-25"
 }
 
 ### get an income 1 by user 1
 GET http://localhost:8080/api/v1/users/1/incomes/1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk0MjcsImV4cCI6MTcxMzMzMzAyN30.94A6dArFLbbrYqS81WUGaXLvNHOh-_JGfy0hJzdRbM0SgA3k358om8E-ud4AOfOBIN-R8wcmPDNTEX6huYgXTw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw
 
 ### update an income 1 by user 1
 PUT http://localhost:8080/api/v1/users/1/incomes/1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk0MjcsImV4cCI6MTcxMzMzMzAyN30.94A6dArFLbbrYqS81WUGaXLvNHOh-_JGfy0hJzdRbM0SgA3k358om8E-ud4AOfOBIN-R8wcmPDNTEX6huYgXTw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw
 Content-Type: application/json
 
 {
-  "source": "part time work",
-  "amount": 2500,
-  "active": false
+  "source": "Full-time Work",
+  "amount": 8500,
+  "payDate": "2024-04-25"
 }
 
 ### delete an income 1 by user 1
 DELETE http://localhost:8080/api/v1/users/1/incomes/1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYXNraUBnbWFpbC5jb20iLCJpYXQiOjE3MTMzMjk0MjcsImV4cCI6MTcxMzMzMzAyN30.94A6dArFLbbrYqS81WUGaXLvNHOh-_JGfy0hJzdRbM0SgA3k358om8E-ud4AOfOBIN-R8wcmPDNTEX6huYgXTw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA2OTA2OCwiZXhwIjoxNzE0MDcyNjY4fQ.pEr4AdwZuo7g-sme8pkbn1hrEnSM_8_gh-0EQX8xT1I7kfy9qutaBtJNsyIfugYmk0XK5-uXP3dWgZA0bdMQyw
