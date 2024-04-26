@@ -72,6 +72,7 @@ const Register = () => {
                 </Form.Group>
                 <br/>
                 <Button style={{marginRight: 10}} type='submit'>Register</Button>
+                <p style={{marginTop: '1em'}}>By clicking Register, you agree to the terms of use.</p>
             </Form>
         </div>
     );
